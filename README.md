@@ -31,6 +31,6 @@ SQL Server 2022 Express
   
 ## Documentación adicional
 
-- [Manual de usuario](/ruta/al/manual.pdf): Este documento proporciona una guía detallada para los usuarios sobre cómo utilizar la aplicación Huellitas Centralinas.
-- [Manual Técnico](/ruta/a/la/guia.pdf): Los administradores pueden consultar esta guía para obtener instrucciones sobre cómo gestionar usuarios, mascotas y otras funciones de la aplicación.
+- [Manual de usuario](https://uceedu-my.sharepoint.com/:b:/g/personal/lxgonzalez_uce_edu_ec/EcpwupHx86hAgURpOriBXa4BS2jtjmV_jr1mIGpeIx103g?e=Xck92w): Este documento proporciona una guía detallada para los usuarios sobre cómo utilizar la aplicación Huellitas Centralinas.
+- [Manual Técnico](https://uceedu-my.sharepoint.com/:b:/g/personal/lxgonzalez_uce_edu_ec/EQiZ2VhCVz1HhBmLsJV4tNMBcZAgT0-EBGZ0uvbTSwkbxQ?e=s0qhY9): Los administradores pueden consultar esta guía para obtener instrucciones sobre cómo gestionar usuarios, mascotas y otras funciones de la aplicación.
 
