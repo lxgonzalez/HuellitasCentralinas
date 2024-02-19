@@ -1,0 +1,119 @@
+﻿@model Mascota
+<div class="container bg-primary bg-opacity-25 mt-5">
+    <div class="row">
+        <form method="post" enctype="multipart/form-data">
+            <div class="p-3 mt-4">
+
+                <div class="row">
+                    <div class="col-4 justify-content-center d-flex align-items-center">
+                        <img src="/images/general/logo.png" class="img-fluid" style="max-width: 300px" />
+                    </div>
+
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="row pb-4">
+                                <h2><b>Agregar un nuevo Canino</b></h2>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label>Nombre</label>
+                                    <input asp-for="Nombre" type="text" class="form-control" />
+                                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Edad (Meses)</label>
+                                    <input asp-for="Edad" type="number" min="0" class="form-control" />
+                                    <span asp-validation-for="Edad" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Sexo</label>
+                                    <select class="form-control" asp-for="Sexo">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="M">Macho</option>
+                                        <option value="F">Hembra</option>
+                                    </select>
+                                    <span asp-validation-for="Sexo" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Inmueble</label>
+                                    <select class="form-control" asp-for="Inmueble">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="CASA PROPIA">Casa Propia</option>
+                                        <option value="DEPARTAMENTO">Departamento</option>
+                                        <option value="HACIENDA">Hacienda</option>
+                                    </select>
+                                    <span asp-validation-for="Inmueble" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label>Foto</label>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="bg-light justify-content-center text-center d-flex align-items-center" style="height: 115px; border-radius: 20px">
+                                                <input type="file" id="file" name="file" class="form-control d-none" onchange="mostrarImagen()" />
+                                                <label for="file" class="btn text-black-50">
+                                                    <i class="bi bi-camera-fill" style="font-size: 40px;"></i><br /> Elegir archivo
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="bg-light justify-content-center d-flex align-items-center" style="height: 115px; border-radius: 20px">
+                                                <div id="imagenPreview" class="text-center"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Tamaño</label>
+                                    <select class="form-control" asp-for="Tamano">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="GRANDE">Grande</option>
+                                        <option value="MEDIANO">Mediano</option>
+                                        <option value="PEQUENO">Pequeño</option>
+                                    </select>
+                                    <span asp-validation-for="Tamano" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Esterilizado</label>
+                                    <select class="form-control" asp-for="Esterilizado">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="S">Si</option>
+                                        <option value="N">No</option>
+                                    </select>
+                                    <span asp-validation-for="Esterilizado" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center ">
+                                <button type="submit" class="btn btn-secondary">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function mostrarImagen() {
+        var input = document.getElementById('file');
+        var preview = document.getElementById('imagenPreview');
+
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.innerHTML = '<img src="' + e.target.result + '" class="img-fluid" style="width: 150px; height: 100px;object-fit: cover;" />';
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            preview.innerHTML = '';
+        }
+    }
+</script>

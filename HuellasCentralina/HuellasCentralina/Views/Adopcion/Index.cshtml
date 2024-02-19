@@ -1,0 +1,306 @@
+﻿@model HuellasCentralina.Models.ViewModel.AdopcionViewModel
+
+<div class="container bg-secondary bg-opacity-25 text-black col-6">
+
+    <form method="post">
+        <div class="row">
+            <input asp-for="Formulario.Aprobada" value="En Espera" class="form-control" hidden />
+            <h1>Solicitud de Adopción</h1>
+            <div class="border border-1 border-white">
+                <h3>Información de la Mascota</h3>
+                <input asp-for="Mascota.IdMascota" type="text" class="form-control" value="@Model.Mascota.IdMascota" hidden />
+                <p><b>Nombre: </b> @Model.Mascota.Nombre</p>
+                <p><b>Sexo: </b>@Model.Mascota.Sexo</p>
+                <p><b>Edad: </b>@Model.Mascota.Edad Meses</p>
+                <p><b>Esterilizado: </b>@Model.Mascota.Esterilizado</p>
+                <h6>Dueño</h6>
+                <p><b>Nombre: </b> @Model.Mascota.Usuario.Nombre @Model.Mascota.Usuario.Apellido </p>
+                <p><b>Email: </b>@Model.Mascota.Usuario.Email</p>
+            </div>
+
+            <div class="border border-1 border-white">
+
+                <h3>Datos Personales</h3>
+                <p><b>Nombre: </b> @User.Identity.Name  @User.FindFirst("Apellido")?.Value</p>
+                <p><b>Email: </b> @User.FindFirst("Email")?.Value</p>
+            </div>
+            <div class="border border-1 border-white">
+                <h3>Situacion Familiar</h3>
+                <h6>Personas que viven con usted:</h6>
+                <div class="mb-3">
+                    <label>Nombre / Parentesco / Edad:</label>
+                    <input asp-for="Formulario.Persona1" type="text" class="form-control" />
+                    <span asp-validation-for="Formulario.Persona1" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>Nombre / Parentesco / Edad:</label>
+                    <input asp-for="Formulario.Persona2" type="text" class="form-control" />
+                    <span asp-validation-for="Formulario.Persona2" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>Nombre / Parentesco / Edad:</label>
+                    <input asp-for="Formulario.Persona3" type="text" class="form-control" />
+                    <span asp-validation-for="Formulario.Persona3" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        ¿Algún familiar espera un bebé?
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Bebe">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <span asp-validation-for="Formulario.Bebe" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="border border-1 border-white">
+                <h3>Domicilio</h3>
+                <div class="mb-3">
+                    <p><b>Inmueble: </b> @User.FindFirst("Inmueble")?.Value</p>
+                    <label>
+                        El lugar donde pasará el animal ¿tiene cerramiento? *
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Cerramiento">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <span asp-validation-for="Formulario.Cerramiento" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="border border-1 border-white">
+                <h3>Relación con los animales</h3>
+                <div class="mb-3">
+                    <label>
+                        ¿Ha tenido alguna mala experiencia con animales? *
+                    </label>
+                    <select class="form-control" asp-for="Formulario.MalaExperiencia">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Ataque">Ataque</option>
+                        <option value="Alergia">Alergia</option>
+                        <option value="Mordedura">Mordedura</option>
+                        <option value="Ninguna">Ninguna</option>
+                    </select>
+                    <span asp-validation-for="Formulario.MalaExperiencia" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        Cuéntenos sobre su último animal de compañía
+                    </label>
+                    <select class="form-control" asp-for="Formulario.TipoAnimal">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Canino">Canino</option>
+                        <option value="Felino">Felino</option>
+                        <option value="No he tenido">No he tenido</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <span asp-validation-for="Formulario.TipoAnimal" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        Sexo
+                    </label>
+                    <select class="form-control" asp-for="Formulario.SexoAnimal">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                    <span asp-validation-for="Formulario.SexoAnimal" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        Fallecio
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Fallecio">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
+                    <span asp-validation-for="Formulario.Fallecio" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="border border-1 border-white">
+                <h3>Preguntas Varias</h3>
+                <div class="mb-3">
+                    <label>
+                        ¿Por qué desea adoptar un animal de compañía? *
+                    </label>
+                    <input asp-for="Formulario.PorqueAdopta" type="text" class="form-control" />
+                    <span asp-validation-for="Formulario.PorqueAdopta" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        Si por algún motivo tuviera que cambiar de domicilio, ¿qué pasaría con su animal de compañía? *
+                    </label>
+                    <input asp-for="Formulario.QuePasaria" type="text" class="form-control" />
+                    <span asp-validation-for="Formulario.QuePasaria" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        Si usted viaja por más de un día, el animal de compañía:
+                    </label>
+                    <select class="form-control" asp-for="Formulario.SiViaja">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Viaja con ud.">
+                            Viaja con ud.
+                        </option>
+                        <option value="Se queda con un familiar">
+                            Se queda con un familiar
+                        </option>
+                        <option value="Hospedaje">
+                            Hospedaje
+                        </option>
+                        <option value="Aún no lo he decidido">
+                            Aún no lo he decidido
+                        </option>
+                    </select>
+                    <span asp-validation-for="Formulario.SiViaja" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        ¿Cuántas horas durante el día el animal de compañía pasará solo? *
+                    </label>
+                    <input asp-for="Formulario.TiempoSolo" type="number" class="form-control" />
+                    <span asp-validation-for="Formulario.TiempoSolo" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        ¿Dónde pasará durante el día? *
+                    </label>
+                    <input asp-for="Formulario.Dia" type="text" class="form-control" />
+                    <span asp-validation-for="Formulario.Dia" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        ¿Dónde pasará durante la noche? *
+                    </label>
+                    <input asp-for="Formulario.Noche" type="text" class="form-control" />
+                    <span asp-validation-for="Formulario.Noche" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        Si usted viaja por más de un día, el animal de compañía:
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Necesidades">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Patio">
+                            Patio
+                        </option>
+                        <option value="Calle">
+                            Calle
+                        </option>
+                        <option value="Casa">
+                            Casa
+                        </option>
+                    </select>
+                    <span asp-validation-for="Formulario.Necesidades" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        ¿Qué comerá habitualmente el animal de compañía? *
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Comida">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Balanceado">
+                            Balanceado
+                        </option>
+                        <option value="Comida casera">
+                            Comida casera
+                        </option>
+                        <option value="Restos">
+                            Restos
+                        </option>
+                    </select>
+                    <span asp-validation-for="Formulario.Comida" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        Si su animal de compañía enferma usted: *
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Enferma">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Lo lleva al veterinario">
+                            Lo lleva al veterinario
+                        </option>
+                        <option value="Lo medica usted mismo">
+                            Lo medica usted mismo
+                        </option>
+                        <option value="Lo lleva al centro de salud">
+                            Lo lleva al centro de salud
+                        </option>
+                        <option value="Espera que se sane solo">
+                            Espera que se sane solo
+                        </option>
+                    </select>
+                    <span asp-validation-for="Formulario.Enferma" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        Estime cuánto dinero podría gastar en su animal de compañía, mensualmente: *
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Dinero">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="$5 a $20">
+                            $5 a $20
+                        </option>
+                        <option value="$21 a $50">
+                            $21 a $50
+                        </option>
+                        <option value="$51 en adelante">
+                            $51 en adelante
+                        </option>
+                    </select>
+                    <span asp-validation-for="Formulario.Dinero" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        ¿Está de acuerdo en que el animal de compañía sea esterilizado? (operado para no tener más cachorros)
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Visita">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Si">
+                            Si
+                        </option>
+                        <option value="No">
+                            No
+                        </option>
+                    </select>
+                    <span asp-validation-for="Formulario.Dinero" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        ¿Está usted Informado y consciente sobre la ordenanza municipal acerca de la tenencia responsable de animales de compañía? *
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Municipal">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Si">
+                            Si
+                        </option>
+                        <option value="No">
+                            No
+                        </option>
+                    </select>
+                    <span asp-validation-for="Formulario.Municipal" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label>
+                        ¿La adopción fue compartida con su familia? *
+                    </label>
+                    <select class="form-control" asp-for="Formulario.Familia">
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="Si">
+                            Si
+                        </option>
+                        <option value="No">
+                            No
+                        </option>
+                    </select>
+                    <span asp-validation-for="Formulario.Familia" class="text-danger"></span>
+                </div>
+
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 mb-3">Enviar</button>
+    </form>
+</div>

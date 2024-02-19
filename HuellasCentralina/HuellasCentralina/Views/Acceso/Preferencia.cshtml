@@ -1,0 +1,66 @@
+﻿@model Usuario
+
+<div class="container bg-primary bg-opacity-25 mt-5 col-8">
+    <div class="row">
+        <form method="post" enctype="multipart/form-data">
+            <div class="p-3 mt-4">
+
+                <div class="row">
+                    <div class="col-6 justify-content-center d-flex align-items-center">
+                        <img src="/images/general/logo.png" class="img-fluid" style="max-width: 300px" />
+                    </div>
+
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="row pb-4 text-center">
+                                <h2><b>Preferencias</b></h2>
+                            </div>
+                            <div class="">
+                                <div class="mb-3">
+                                    <label>Sexo</label>
+                                    <select class="form-control" asp-for="Sexo">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="M">Macho</option>
+                                        <option value="F">Hembra</option>
+                                    </select>
+                                    <span asp-validation-for="Sexo" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Inmueble</label>
+                                    <select class="form-control" asp-for="Inmueble">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="CASA PROPIA">Casa Propia</option>
+                                        <option value="DEPARTAMENTO">Departamento</option>
+                                        <option value="HACIENDA">Hacienda</option>
+                                    </select>
+                                    <span asp-validation-for="Inmueble" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Tamaño</label>
+                                    <select class="form-control" asp-for="Tamano">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="GRANDE">Grande</option>
+                                        <option value="MEDIANO">Mediano</option>
+                                        <option value="PEQUENO">Pequeño</option>
+                                    </select>
+                                    <span asp-validation-for="Tamano" class="text-danger"></span>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center ">
+                                    <button type="submit" class="btn btn-secondary">Agregar Preferencias</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input asp-for="Nombre" class="form-control" hidden />
+            <input asp-for="Apellido" class="form-control" hidden />
+            <input asp-for="NombreUsuario" class="form-control" hidden />
+            <input asp-for="Clave" class="form-control" hidden />
+            <input asp-for="Email" class="form-control" hidden />
+            <input asp-for="FotoUrl" class="form-control" hidden />
+            <input asp-for="IdRol" class="form-control" hidden />
+            <input asp-for="IdUsuario" class="form-control" hidden />
+        </form>
+    </div>
+</div>

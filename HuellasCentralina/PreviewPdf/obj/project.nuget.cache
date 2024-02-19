@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "UxgiRX4/Gjnc3Dkag2B5R/s6i/byFF6a/wtS1KadOmFtEnJWFKcEne2i/R59u1M602WrMsVHyLw2ARGKjgrpFg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\luisg\\OneDrive\\Escritorio\\Proyectos Marcos\\HuellasCentralina\\PreviewPdf\\PreviewPdf.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\luisg\\.nuget\\packages\\harfbuzzsharp\\7.3.0.1\\harfbuzzsharp.7.3.0.1.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\7.3.0.1\\harfbuzzsharp.nativeassets.macos.7.3.0.1.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\7.3.0.1\\harfbuzzsharp.nativeassets.win32.7.3.0.1.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\questpdf\\2023.12.4\\questpdf.2023.12.4.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\skiasharp\\2.88.7\\skiasharp.2.88.7.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\skiasharp.harfbuzz\\2.88.7\\skiasharp.harfbuzz.2.88.7.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.7\\skiasharp.nativeassets.macos.2.88.7.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.7\\skiasharp.nativeassets.win32.2.88.7.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,68 @@
+﻿@model List<Usuario>
+<div class="container">
+    <div class="row pt-4 border-bottom">
+        <div class="col-5">
+            <h1>Listado de Usuarios</h1>
+        </div>
+        <div class="col-7 text-end">
+            <a asp-controller="Usuario" asp-action="Create" class="btn btn-primary">Agregar Usuario</a>
+        </div>
+    </div>
+    <div class="row mt-3 mb-3">
+        <form asp-action="ReporteUsuario" asp-controller="Usuario">
+            <button class="btn btn-success" type="submit">
+                <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                Descargar Reporte
+            </button>
+        </form>
+    </div>
+    <table class="table table-striped border-top">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Email</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td hidden>@m.IdUsuario</td>
+                    <td>@m.Nombre @m.Apellido</td>
+                    <td>@m.NombreUsuario</td>
+                    <td>@m.Email</td>
+                    <td>@m.Rol.Descripcion</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <a asp-controller="Usuario" asp-action="Edit" asp-route-id="@m.IdUsuario" class="btn btn-secondary">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-6 text-end">
+                                <button type="button" class="btn btn-danger" onclick="confirmAndSubmit('@m.IdUsuario')">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <form asp-controller="Usuario" asp-action="Delete" method="post" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este usuario?');" id="deleteForm">
+        <input type="hidden" name="id" id="userIdToDelete" />
+    </form>
+</div>
+
+<script>
+    function confirmAndSubmit(userId) {
+        if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+            document.getElementById('userIdToDelete').value = userId;
+            document.getElementById('deleteForm').submit();
+        }
+    }
+</script>

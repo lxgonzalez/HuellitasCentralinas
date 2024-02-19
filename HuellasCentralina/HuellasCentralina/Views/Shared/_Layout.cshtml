@@ -1,0 +1,155 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]Huellitas Centralinas</title>
+    <link rel="icon" type="image/png" href="~/images/general/huella.png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HuellasCentralina.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3 navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fa-solid fa-paw"></i>
+                    <b>Huellitas Centralinas</b>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        @if (User.IsInRole("Administrador"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="Index">
+                                    <i class="bi bi-people-fill"></i>
+                                    Gestión de Usuarios
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Mascota" asp-action="Index">
+                                    <i class="fa-solid fa-dog"></i>
+                                    Gestión de Perritos
+                                </a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Adoptante"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="MascotaUsuario" asp-action="MascotaAdoptante">
+                                    <i class="fa-solid fa-dog"></i>
+                                    Perritos en Adopción
+                                </a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Rescatador"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="MascotaUsuario" asp-action="MascotaRescatador">
+                                    <i class="fa-solid fa-dog"></i>
+                                    Mis Caninos
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="MascotaUsuario" asp-action="Create">
+                                    <i class="bi bi-plus-circle-fill"></i>
+                                    Agregar Canino
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                            @if (!String.IsNullOrEmpty(@User.FindFirst("FotoUrl")?.Value))
+                            {
+                                <img src="~/@User.FindFirst("FotoUrl")?.Value" class="img-fluid rounded-circle" style="width: 25px; height: 25px; object-fit: cover" alt="User Image" />
+                            }
+                            @User.Identity.Name  @User.FindFirst("Apellido")?.Value
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                            <li>
+                                <a class="dropdown-item" asp-controller="Acceso" asp-action="Perfil" asp-route-id="@User.FindFirst("IdUsuario")?.Value">
+                                    <i class="bi bi-person-fill"></i>
+                                    Mi perfil
+                                </a>
+                            </li>
+                            @if (User.IsInRole("Adoptante"))
+                            {
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Acceso" asp-action="Preferencia" asp-route-id="@User.FindFirst("IdUsuario")?.Value">
+                                        <i class="bi bi-bookmark-heart-fill"></i>
+                                        Preferencias
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Adopcion" asp-action="MensajeAdoptante" asp-route-id="@User.FindFirst("IdUsuario")?.Value">
+                                        <i class="bi bi-chat-fill"></i>
+                                        Solicitudes Enviadas
+                                    </a>
+                                </li>
+                            }
+                            @if (User.IsInRole("Rescatador") || User.IsInRole("Administrador"))
+                            {
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Adopcion" asp-action="MensajeRescatador" asp-route-id="@User.FindFirst("IdUsuario")?.Value">
+                                        <i class="bi bi-chat-fill"></i>
+                                        Solicitudes
+                                    </a>
+                                </li>
+                            }
+                            <li>
+                                <a class="dropdown-item" asp-controller="Acceso" asp-action="Salir">
+                                    <i class="bi bi-box-arrow-left"></i>
+                                    Salir
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div class="btn-group">
+                        <a class="btn btn-secondary" asp-controller="Acceso" asp-action="Index">Ingresar</a>
+                        <a asp-controller="Acceso" asp-action="Registrarse" class="btn btn-primary">Registrarse</a>
+                    </div>
+                }
+            </div>
+        </nav>
+    </header>
+    @* <div class="container"> *@
+        <main role="main" class="pb-3">
+            <div class="bg-black m-5">
+                <partial name="_Notification" />
+            </div>
+
+            @RenderBody()
+        </main>
+    @* </div> *@
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Huellitas Centralinas;
+            Quito, Ecuador
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/0e24d20b16.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

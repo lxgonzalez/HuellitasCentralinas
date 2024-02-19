@@ -1,0 +1,142 @@
+﻿@model List<Mascota>
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-3"></div>
+        <div class="col-9">
+            <h1>Amigos Perrunos</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 bg-primary bg-opacity-25 rounded-4 text-black">
+            <form method="get" asp-action="MascotaAdoptante">
+                <fieldset class="form-group">
+                    <legend>Preferencias</legend>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="preferencias" value="@User.FindFirst("IdUsuario")?.Value" id="preferenciasCheckbox">
+                        <label class="form-check-label" for="preferenciasCheckbox">Si</label>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group mt-4">
+                    <legend>Sexo</legend>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="sexo" value="M" id="masculinoCheckbox">
+                        <label class="form-check-label" for="masculinoCheckbox">Macho</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="sexo" value="F" id="femeninoCheckbox">
+                        <label class="form-check-label" for="femeninoCheckbox">Hembra</label>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group mt-4">
+                    <legend>Tamaño</legend>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="tamano" value="PEQUENO" id="PequeñoCheckbox">
+                        <label class="form-check-label" for="PequeñoCheckbox">Pequeño</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="tamano" value="MEDIANO" id="MedianoCheckbox">
+                        <label class="form-check-label" for="MedianoCheckbox">Mediano</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="tamano" value="GRANDE" id="GrandeCheckbox">
+                        <label class="form-check-label" for="GrandeCheckbox">Grande</label>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-secondary btn-sm mt-3">Filtrar</button>
+
+            </form>
+        </div>
+        <div class="col-9">
+            
+            <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3">
+
+                @foreach (var obj in Model)
+                {
+                    <div class="col mb-4">
+                        <div class="card bg-secondary text-dark bg-opacity-25 ">
+                            <h3 class="card-header text-dark">@obj.Nombre</h3>
+                            <img src="~/@obj.FotoUrl" class="card-img-top" style="height: 150px; object-fit: cover;" />
+
+                            <div class="card-footer">
+                                <div class="row text-center">
+                                    <div class="col-12">
+                                        <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#modalDetalles-@obj.IdMascota">
+                                            Ver Detalles
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="modalDetalles-@obj.IdMascota" tabindex="-1" role="dialog" aria-labelledby="modalDetallesLabel-@obj.IdMascota" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalDetallesLabel-@obj.IdMascota">Tu Próximo Amigo</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6><b>Rescatador: @obj.Usuario.Nombre @obj.Usuario.Apellido</b></h6>
+                                            <p><b>Nombre:</b> @obj.Nombre</p>
+                                            <p><b>Edad:</b> @obj.Edad Meses</p>
+                                            @if (@obj.Sexo == "M")
+                                            {
+                                                <p><b>Sexo:</b> Macho</p>
+                                            }
+                                            else
+                                            {
+                                                <p><b>Sexo:</b> Hembra</p>
+                                            }
+                                            <p><b>Tamaño:</b> @obj.Tamano</p>
+                                            <p><b>Inmueble:</b> @obj.Inmueble</p>
+                                            @if (@obj.Esterilizado == "S")
+                                            {
+                                                <p><b>Esterilizado:</b> SI</p>
+                                            }
+                                            else
+                                            {
+                                                <p><b>Esterilizado:</b> NO</p>
+                                            }
+                                        </div>
+                                        <div class="col-6 d-flex align-content-center">
+                                            <img src="~/@obj.FotoUrl" class="img-fluid rounded-5" style="object-fit: cover" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <a asp-controller="Adopcion" asp-action="Index" class="btn btn-primary" asp-route-id ="@obj.IdMascota">Adoptar</a>
+                                    @* <button type="button" class="btn btn-primary" data-dismiss="modal">Adoptar</button> *@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Agrega un script al final de tu página para manejar la lógica de deshabilitar otros inputs -->
+<script>
+    $(document).ready(function () {
+        $('#preferenciasCheckbox').change(function () {
+            if ($(this).prop('checked')) {
+                $('input[name="sexo"]').prop('disabled', true);
+                $('input[name="tamano"]').prop('disabled', true);
+            } else {
+                $('input[name="sexo"]').prop('disabled', false);
+                $('input[name="tamano"]').prop('disabled', false);
+            }
+        });
+    });
+</script>

@@ -1,0 +1,135 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HuellasCentralina
+build_property.RootNamespace = HuellasCentralina
+build_property.ProjectDir = C:\Users\luisg\OneDrive\Escritorio\Proyectos Marcos\HuellasCentralina\HuellasCentralina\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\luisg\OneDrive\Escritorio\Proyectos Marcos\HuellasCentralina\HuellasCentralina
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Acceso/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Acceso/Perfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXFBlcmZpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Acceso/Preferencia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXFByZWZlcmVuY2lhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Acceso/RecuperarClave.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXFJlY3VwZXJhckNsYXZlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Acceso/Registrarse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNvXFJlZ2lzdHJhcnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Adopcion/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcGNpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Adopcion/MensajeAdoptante.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcGNpb25cTWVuc2FqZUFkb3B0YW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Adopcion/MensajeRescatador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcGNpb25cTWVuc2FqZVJlc2NhdGFkb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Adopcion/MensajesIndividuales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcGNpb25cTWVuc2FqZXNJbmRpdmlkdWFsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Adopcion/MensajesIndividualesRescatador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcGNpb25cTWVuc2FqZXNJbmRpdmlkdWFsZXNSZXNjYXRhZG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/MascotaUsuario/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVVzdWFyaW9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/MascotaUsuario/MascotaAdoptante.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVVzdWFyaW9cTWFzY290YUFkb3B0YW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/MascotaUsuario/MascotaRescatador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVVzdWFyaW9cTWFzY290YVJlc2NhdGFkb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Mascota/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Mascota/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Mascota/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFzY290YVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Shared/_Notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Usuario/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Usuario/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Usuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/luisg/OneDrive/Escritorio/Proyectos Marcos/HuellasCentralina/HuellasCentralina/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ibxej4l239

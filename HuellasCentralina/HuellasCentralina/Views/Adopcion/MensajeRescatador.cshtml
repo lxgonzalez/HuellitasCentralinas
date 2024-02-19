@@ -1,0 +1,34 @@
+﻿@model List<Mensaje>
+
+<div class="container" style="height: 1770px;">
+    <div class="row">
+        <div class="col-3 bg-primary bg-opacity-25 justify-content-center" style="height: 1660px;">
+            <img src="/images/general/logo.png" class="img-fluid mt-4 mb-4"  />
+
+            @foreach (var m in Model)
+            {
+                <div class="btn btn-light mt-2 container-fluid" onclick="loadMensajesIndividuales(@m.IdMensaje)"><b>De: </b>@m.Remitente.Nombre @m.Remitente.Apellido</div>
+            }
+        </div>
+        <div class="col-9" id="mensajesIndividualesContainer">
+            <!-- Aquí se cargará la vista MensajesIndividuales -->
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        function loadMensajesIndividuales(id) {
+            $.ajax({
+                url: '@Url.Action("MensajesIndividualesRescatador", "Adopcion")/' + id,
+                type: 'GET',
+                success: function (result) {
+                    $('#mensajesIndividualesContainer').html(result);
+                },
+                error: function () {
+                    alert('Error al cargar la vista MensajesIndividuales.');
+                }
+            });
+        }
+    </script>
+}
